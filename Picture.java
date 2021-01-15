@@ -368,22 +368,37 @@ public class Picture
 
    ////////////////////// methods ///////////////////////////////////////
   //precondition: amount is between 0 and 1
-public void decreaseBlue(double amount)
-   {
-   //create a pixel array
-   Pixel[]pixelArray=this.getPixels();
-   //create a pixel object
-   Pixel p  = null;
-   //loop through all of the pixels
-   for(int x=0;x<pixelArray.length;x++)
-   {
-   //get the current pixel
-   p =pixelArray[x];
-    //decrease the blue value
+public void decreaseBlue(double amount){
+  //Enter all pixels for the picture in an array
+  Pixel[] pixelArray = this.getPixels();
+  //Make a variable p for the pixel holder
+  Pixel p = null;
+  //Start for loop initializing iterator i as 0, looping while i is less than pixels.length, and adding i by one each loop:
+  for(int i = 0; i < pixelArray.length; i++){
+    //Get a pixel, storing it in p
+    p = pixelArray[i];
+    //Set the blue value to 3 less than the original value
     p.setBlue((int)(p.getBlue()*amount));
-   }
-   }
-   
+  }
+  //Close loop
+}
+public void negativeImage(){
+  //create a pixel array
+  Pixel[] pixelArray = this.getPixels();
+  //create a pixel object
+  Pixel p = null;
+  //loop through the array using a for-each loop
+  for(Pixel currentPixel:pixelArray){
+    //get the current pixel in the pixel object
+    p = currentPixel;
+    //set the pixel’s red value to 255 minus its original red value
+    p.setRed(255 - p.getRed());
+    //set the pixel’s green value to 255 minus its original green value
+    p.setGreen(255 - p.getGreen());
+    //set the pixel’s blue value to 255 minus its original blue value
+    p.setBlue(255 - p.getBlue());
+  } 
+}
 /*
 The copper-puzzle.png image is a puzzle -- it shows something famous, however the image has been distored. The true image is in the blue and green values, however all the blue and green values have all be divided by 20, so the values are very small. The red values are all just random numbers, noise added on top to obscure things. Undo these distortions to reveal the true image.
 
