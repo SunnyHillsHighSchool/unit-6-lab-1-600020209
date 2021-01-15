@@ -4,7 +4,7 @@ class Main
   public static void main(String[] args) 
   {
     Picture pic = new Picture("beach.jpg");
-    pic.negativeImage();
+    pic.decreaseRGB(.6,.6,.6);
     pic.write("output.jpg");
   }
 }
