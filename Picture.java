@@ -373,10 +373,10 @@ public void decreaseRGB(double rAmount, double gAmount, double bAmount){
   Pixel[] pixelArray = this.getPixels();
   //Make a variable p for the pixel holder
   Pixel p = null;
-  //Start for loop initializing iterator i as 0, looping while i is less than pixels.length, and adding i by one each loop:
-  for(int i = 0; i < pixelArray.length; i++){
-    //Get a pixel, storing it in p
-    p = pixelArray[i];
+  //Start for-each loop for pixel array, creating variable to store current pixel
+  for(Pixel currentPixel:pixelArray){
+    //Get current pixel, storing it in p
+    p = currentPixel;
     //Set the red value to the original value times the rAmount
     p.setRed((int)(p.getRed()*rAmount));
     //Set the green value to the original value times the gAmount
